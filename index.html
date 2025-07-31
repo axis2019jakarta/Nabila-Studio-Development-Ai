@@ -3,700 +3,315 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Nabila Studio - Suite AI Kreatif Terlengkap (Novel, Gambar, Podcast, Jawaban, Lirik, Puisi)</title>
-    <meta name="description" content="Selamat datang di Nabila Studio, platform AI canggih untuk semua kebutuhan kreatif Anda. Hasilkan gambar dari teks, novel sekelas profesional, podcast studio, dapatkan jawaban semua soal, ciptakan lirik lagu dan puisi. Didukung oleh Cohere, Stability AI, ElevenLabs, dan lainnya.">
-    <meta name="keywords" content="AI, Nabila Studio, AI Image Generator, AI Novel Writer, Podcast Generator, AI Penjawab Soal, Generator Lirik, Generator Puisi, Beli Kunci API, Cohere, Stability AI, ElevenLabs, Pixabay, Penulis, Podcaster, Kreator, Kecerdasan Buatan">
-    <meta name="author" content="Nabila Studio Development">
-    <meta name="robots" content="index, follow">
-
-    <link rel="icon" href="https://img.icons8.com/fluency/48/prototyping-process.png" type="image/png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Orbitron:wght@800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
+    <title>Nabila Ahmad Topup Gaming Shop - Topup Diamond Mobile Legends Murah</title>
     <style>
-        :root {
-            --bg-dark: #10101a; --bg-light: #1d1d2b; --sidebar-bg: #151521;
-            --primary-glow: #a855f7; --secondary-glow: #00e1ff; --accent-glow: #ff55a5;
-            --text-light: #f0f0f0; --text-dark: #a0a0b0; --border-color: rgba(255, 255, 255, 0.1);
-            --warning-color: #ffc107; --success-color: #28a745; --danger-color: #dc3545;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Poppins', sans-serif; background-color: var(--bg-dark); color: var(--text-light);
-            background-image: radial-gradient(circle at 1% 1%, var(--primary-glow), transparent 30%),
-                              radial-gradient(circle at 99% 99%, var(--secondary-glow), transparent 30%),
-                              radial-gradient(circle at 50% 50%, var(--accent-glow), transparent 40%);
-            background-attachment: fixed; overflow-x: hidden;
-        }
-        .info-ticker {
-            background-color: var(--primary-glow); color: white; padding: 0.5rem; text-align: center;
-            font-weight: 600; font-size: 0.9em; position: fixed; top: 0; width: 100%; z-index: 1002;
-            box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
-        }
-        .page-wrapper { display: flex; padding-top: 40px; }
-        .sidebar {
-            width: 260px; background-color: var(--sidebar-bg); position: fixed; top: 40px; left: 0;
-            height: calc(100vh - 40px); padding: 1.5rem 1rem; border-right: 1px solid var(--border-color);
-            display: flex; flex-direction: column; z-index: 1001; transition: transform 0.3s ease-in-out;
-        }
-        .sidebar-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; }
-        .sidebar-header h1 {
-            font-family: 'Orbitron', sans-serif; font-size: 1.5em;
-            background: linear-gradient(90deg, var(--primary-glow), var(--secondary-glow));
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-        }
-        .sidebar-header .close-btn { font-size: 1.5rem; color: var(--text-dark); cursor: pointer; display: none; }
-        .sidebar-nav { overflow-y: auto; }
-        .sidebar-nav a {
-            display: flex; align-items: center; padding: 1rem; margin-bottom: 0.5rem; color: var(--text-dark);
-            text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s ease;
-        }
-        .sidebar-nav a i { width: 30px; font-size: 1.2em; margin-right: 1rem; }
-        .sidebar-nav a:hover { background-color: var(--bg-light); color: var(--text-light); }
-        .sidebar-nav a.active { background-color: var(--bg-light); color: var(--text-light); box-shadow: 0 0 15px var(--primary-glow); }
-        .main-content-area { margin-left: 260px; width: calc(100% - 260px); padding: 2rem; animation: fadeIn 1s ease-out; position: relative;}
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        .menu-toggle {
-            display: none; position: fixed; top: 55px; left: 15px; background-color: var(--bg-light);
-            color: var(--text-light); border: 1px solid var(--border-color); border-radius: 50%;
-            width: 45px; height: 45px; font-size: 1.2rem; justify-content: center; align-items: center;
-            cursor: pointer; z-index: 1002;
-        }
-        .page { display: none; }
-        .page.active { display: block; animation: contentFadeIn 0.5s; }
-        @keyframes contentFadeIn { from { opacity: 0; } to { opacity: 1; } }
-        .page-header { margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border-color); }
-        .page-header h2 { font-size: 2.2em; font-weight: 700; }
-        .page-header p { color: var(--text-dark); }
-        .form-section { background-color: var(--bg-light); padding: 1.5rem; border-radius: 15px; margin-bottom: 1.5rem; border: 1px solid var(--border-color); }
-        .form-section h3 { font-size: 1.5em; margin-bottom: 1rem; border-left: 4px solid var(--primary-glow); padding-left: 10px; }
-        .input-group { margin-bottom: 1rem; }
-        .input-group label { display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-dark); }
-        .input-group input, .input-group textarea, .input-group select {
-            width: 100%; padding: 0.8rem; background-color: var(--bg-dark); border: 1px solid var(--border-color);
-            border-radius: 8px; color: var(--text-light); font-size: 1em; transition: all 0.3s ease;
-        }
-        .input-group input:focus, .input-group textarea:focus, .input-group select:focus { outline: none; border-color: var(--secondary-glow); box-shadow: 0 0 10px var(--secondary-glow); }
-        textarea { resize: vertical; min-height: 120px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; }
-        .btn {
-            display: inline-block; padding: 1rem; font-size: 1.2em; font-weight: 700; text-align: center;
-            border: none; border-radius: 8px; cursor: pointer; transition: all 0.3s ease; position: relative; overflow: hidden;
-        }
-        .btn-primary { background: linear-gradient(90deg, var(--primary-glow), var(--accent-glow)); color: white; width: 100%;}
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); }
-        .btn:disabled { background: var(--text-dark); cursor: not-allowed; transform: translateY(0); box-shadow: none; }
-        .output-pane { margin-top: 2rem; }
-        .output-pane h3 { font-size: 1.5em; margin-bottom: 1rem; border-left: 4px solid var(--secondary-glow); padding-left: 10px; }
-        .output-area { width: 100%; min-height: 400px; background-color: #10101a; color: #f0f0f0; border: 1px solid var(--border-color); border-radius: 8px; padding: 1rem; font-size: 1.1em; line-height: 1.6; }
-        #image-output-area {
-            display: flex; justify-content: center; align-items: center; width: 100%; min-height: 400px;
-            background-color: #10101a; border: 1px solid var(--border-color); border-radius: 8px;
-            padding: 1rem; overflow: hidden;
-        }
-        #image-output-area img { max-width: 100%; max-height: 512px; height: auto; object-fit: contain; border-radius: 8px; }
-        .action-buttons { display: flex; gap: 1rem; margin-top: 1rem; justify-content: flex-end; }
-        .btn-secondary { background: var(--bg-light); color: var(--text-light); border: 1px solid var(--border-color); padding: 0.5rem 1rem; font-size: 0.9em; width: auto; }
-        .btn-secondary:hover { border-color: var(--primary-glow); color: var(--primary-glow); }
-        .api-status-list { list-style: none; padding: 0; }
-        .api-status-list li { display: flex; justify-content: space-between; align-items: center; background: var(--bg-dark); padding: 0.8rem 1rem; border-radius: 8px; margin-bottom: 0.5rem; }
-        .api-status-badge { font-weight: bold; padding: 0.3rem 0.6rem; border-radius: 5px; font-size: 0.8em; }
-        .status-ok { background-color: var(--success-color); color: white; }
-        .status-missing { background-color: var(--danger-color); color: white; }
-        .api-status-list a { color: var(--secondary-glow); text-decoration: none; font-weight: bold; }
-        .whatsapp-fab {
-            position: fixed; bottom: 20px; right: 20px; background-color: #25D366; color: white;
-            width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center;
-            align-items: center; font-size: 2em; text-decoration: none; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-            transition: all 0.3s ease; z-index: 1001;
-        }
-        .whatsapp-fab:hover { transform: scale(1.1) rotate(10deg); box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6); }
-        .disclaimer-box {
-            padding: 1rem; background-color: rgba(255, 193, 7, 0.1); border-left: 5px solid var(--warning-color);
-            border-radius: 8px; margin-bottom: 1.5rem; color: var(--warning-color);
-        }
-        #podcast-audio-player { width: 100%; margin-top: 1rem; }
-        #image-preview-container { width: 100%; min-height: 150px; border: 2px dashed var(--border-color); border-radius: 8px; display: flex; justify-content: center; align-items: center; padding: 1rem; }
-        #image-preview { max-width: 100%; max-height: 250px; border-radius: 5px; }
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;700&display=swap');
 
-        @media (max-width: 992px) {
-            .sidebar { transform: translateX(-100%); z-index: 1003; top: 0; height: 100vh; }
-            .sidebar.open { transform: translateX(0); box-shadow: 5px 0 25px rgba(0,0,0,0.3); }
-            .sidebar-header .close-btn { display: block; }
-            .main-content-area { margin-left: 0; width: 100%; padding: 1.5rem; }
-            .menu-toggle { display: flex; }
-            .page-wrapper { padding-top: 40px; }
-            .grid, .payment-container { grid-template-columns: 1fr; }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #1a1a2e;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
+
+        .container {
+            background: linear-gradient(145deg, #16223e, #1f2c4d);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            width: 90%;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            color: #ffd700;
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 10px rgba(255, 215, 0, 0.5);
+        }
+
+        .header p {
+            font-size: 1.2em;
+            color: #b0b0b0;
+        }
+        
+        .marquee-container {
+            background-color: rgba(255, 215, 0, 0.1);
+            border: 1px solid #ffd700;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 20px 0;
+            overflow: hidden;
+            white-space: nowrap;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+
+        .marquee-text {
+            display: inline-block;
+            padding-left: 100%;
+            animation: marquee 30s linear infinite;
+            color: #ffd700;
+            font-weight: bold;
+        }
+
+        @keyframes marquee {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-100%, 0); }
+        }
+
+        .form-container {
+            margin-top: 30px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #ffd700;
+            font-weight: bold;
+        }
+
+        .input-group input,
+        .input-group select {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ffd700;
+            border-radius: 8px;
+            background-color: #1f2c4d;
+            color: #e0e0e0;
+            font-size: 1em;
+            box-sizing: border-box;
+        }
+        
+        .input-group input[type="file"] {
+            padding: 10px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .product-item {
+            background-color: #1f2c4d;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #ffd700;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .product-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(255, 215, 0, 0.2);
+        }
+
+        .product-item .amount {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .product-item .price {
+            font-size: 1em;
+            color: #ffd700;
+        }
+        
+        .product-item .old-price {
+            font-size: 0.8em;
+            color: #b0b0b0;
+            text-decoration: line-through;
+        }
+
+        .payment-method {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+
+        .payment-method h3 {
+            color: #ffd700;
+        }
+
+        .payment-method p {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .btn-submit {
+            background: linear-gradient(45deg, #ffd700, #f0b90b);
+            color: #1a1a2e;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .btn-submit:hover {
+            background: linear-gradient(45deg, #f0b90b, #ffd700);
+        }
+
     </style>
 </head>
 <body>
 
-    <div class="info-ticker"><marquee>Selamat Datang di Nabila Studio! Platform AI Kreatif Terlengkap. Semua Fitur Telah Disempurnakan. Beli Kunci API Premium melalui menu 'Beli Kunci API'.</marquee></div>
+    <div class="container">
+        <header class="header">
+            <h1>Nabila Ahmad Topup Gaming Shop</h1>
+            <p>Solusi Topup Diamond Mobile Legends Tercepat dan Termurah</p>
+        </header>
 
-    <div class="page-wrapper">
-        <nav class="sidebar" id="sidebar">
-            <div class="sidebar-header"><h1><i class="fa-solid fa-brain"></i>Nabila Studio</h1><i class="fa-solid fa-times close-btn" id="close-menu"></i></div>
-            <div class="sidebar-nav">
-                <a href="#" class="nav-link active" data-page="page-dashboard"><i class="fa-solid fa-house-chimney"></i> Dashboard</a>
-                <a href="#" class="nav-link" data-page="page-image"><i class="fa-solid fa-image"></i> AI Image Generator</a>
-                <a href="#" class="nav-link" data-page="page-writer"><i class="fa-solid fa-book-sparkles"></i> AI Novel Writer</a>
-                <a href="#" class="nav-link" data-page="page-podcast"><i class="fa-solid fa-podcast"></i> Studio Podcast</a>
-                <a href="#" class="nav-link" data-page="page-qa"><i class="fa-solid fa-question-circle"></i> AI Penjawab Soal</a>
-                <a href="#" class="nav-link" data-page="page-lyrics"><i class="fa-solid fa-music"></i> Generator Lirik Lagu</a>
-                <a href="#" class="nav-link" data-page="page-poem"><i class="fa-solid fa-feather-alt"></i> Generator Puisi</a>
-                <a href="#" class="nav-link" data-page="page-ramalan"><i class="fa-solid fa-wand-magic"></i> Generator Ramalan</a>
-                <a href="#" class="nav-link" data-page="page-payment"><i class="fa-solid fa-wallet"></i> Beli Kunci API</a>
-                <a href="#" class="nav-link" data-page="page-keys"><i class="fa-solid fa-key"></i> Manajemen Kunci API</a>
-                <a href="#" class="nav-link" data-page="page-about"><i class="fa-solid fa-info-circle"></i> Tentang & Kontak</a>
+        <div class="marquee-container">
+            <div class="marquee-text">
+                Selamat Datang di Nabila Ahmad Topup Gaming Shop! Nikmati harga spesial Diamond Mobile Legends lebih murah dari Itemku!    |     Promo Terbatas! Dapatkan 184 Diamond hanya Rp. 50.000 (Harga Itemku Rp. 51.000)!    |     Harga dapat berubah sewaktu-waktu, yuk top up sekarang juga sebelum kehabisan! Jangan lewatkan kesempatan emas ini!
             </div>
-        </nav>
+        </div>
 
-        <main class="main-content-area">
-            <div class="menu-toggle" id="menu-toggle"><i class="fa-solid fa-bars"></i></div>
-            
-            <div id="page-dashboard" class="page active">
-                <div class="page-header"><h2>Dashboard</h2><p>Selamat datang kembali, Kreator! Inilah pusat kendali kreatif Anda.</p></div>
-                <div class="form-section"><h3><i class="fa-solid fa-check-circle"></i> Status Kunci API</h3><ul class="api-status-list" id="api-status-list"></ul></div>
-                <div class="form-section"><h3><i class="fa-solid fa-rocket"></i> Akses Cepat</h3><div class="grid">
-                    <button class="btn" onclick="navigateToPage('page-image')">Buat Gambar AI</button>
-                    <button class="btn" onclick="navigateToPage('page-writer')">Mulai Menulis Novel</button>
-                    <button class="btn" onclick="navigateToPage('page-podcast')">Buat Podcast AI</button>
-                    <button class="btn" onclick="navigateToPage('page-keys')">Atur Kunci API</button>
-                </div></div>
-            </div>
+        <div class="form-container">
+            <form id="purchaseForm">
+                <div class="input-group">
+                    <label for="userId">User ID</label>
+                    <input type="text" id="userId" name="userId" placeholder="Masukkan User ID Anda" required>
+                </div>
+                <div class="input-group">
+                    <label for="zoneId">Zone ID (Server)</label>
+                    <input type="text" id="zoneId" name="zoneId" placeholder="Masukkan Zone ID (4-5 digit)" required>
+                </div>
 
-            <div id="page-image" class="page">
-                <div class="page-header"><h2>AI Image Generator</h2><p>Ubah imajinasi Anda menjadi gambar visual yang menakjubkan.</p></div>
-                <div class="form-section">
-                    <h3><i class="fa-solid fa-palette"></i> Deskripsikan Gambar Anda</h3>
-                    <div class="input-group"><label for="image-prompt">Prompt (Deskripsi Gambar)</label><textarea id="image-prompt" placeholder="Contoh: Seekor astronot kucing mengendarai sepeda di Mars, sinematik, detail tinggi, 4k"></textarea></div>
-                    <div class="input-group"><label for="image-negative-prompt">Negative Prompt (Apa yang ingin dihindari)</label><input type="text" id="image-negative-prompt" placeholder="Contoh: blur, jelek, teks, watermark, kualitas rendah"></div>
-                    <div class="input-group"><label for="image-style">Gaya Gambar</label><select id="image-style">
-                        <option value="cinematic">Cinematic</option><option value="photographic">Photographic</option><option value="digital-art">Digital Art</option><option value="anime">Anime</option>
-                        <option value="fantasy-art">Fantasy Art</option><option value="isometric">Isometric</option><option value="pixel-art">Pixel Art</option><option value="3d-model">3D Model</option>
-                    </select></div>
-                    <button id="generate-image-btn" class="btn btn-primary" onclick="generateImage()"><i class="fa-solid fa-image"></i> Buat Gambar!</button>
-                </div>
-                <div class="output-pane"><h3><i class="fa-solid fa-image"></i> Hasil Gambar</h3><div id="image-output-area"><p style="color: var(--text-dark);">Gambar yang Anda buat akan muncul di sini...</p></div>
-                    <div class="action-buttons"><button class="btn btn-secondary" id="download-image-btn" style="display: none;" onclick="downloadImage()"><i class="fa-solid fa-download"></i> Unduh Gambar</button></div>
-                </div>
-            </div>
-
-            <div id="page-writer" class="page">
-                <div class="page-header"><h2>AI Novel Writer</h2><p>Ciptakan novel dari ide sederhana, bab demi bab.</p></div>
-                <div class="form-section">
-                    <h3><i class="fa-solid fa-lightbulb"></i> Langkah 1: Buat Premis Cerita</h3>
-                    <div class="input-group"><label for="writer-prompt">Jelaskan ide utama novel Anda</label><textarea id="writer-prompt" placeholder="Contoh: Seorang detektif di Jakarta tahun 2049 yang harus memecahkan kasus pembunuhan oleh android, sementara ia sendiri menyembunyikan rahasia besar. Genre: Sci-fi Noir. Gaya Penulisan: Seperti novel terjemahan Sandra Brown."></textarea></div>
-                    <button id="writer-generate-btn" class="btn btn-primary" onclick="generateNovel()"><i class="fa-solid fa-play-circle"></i> Mulai Cerita & Buat Bab 1</button>
-                </div>
-                <div class="output-pane"><h3><i class="fa-solid fa-book-open"></i> Naskah Novel Anda</h3>
-                    <textarea id="writer-output" class="output-area" readonly placeholder="Cerita Anda akan muncul di sini..."></textarea>
-                    <div class="action-buttons">
-                        <button id="writer-continue-btn" class="btn btn-secondary" onclick="continueNovel()" style="display: none;"><i class="fa-solid fa-forward"></i> Lanjutkan ke Bab Selanjutnya</button>
-                        <button class="btn btn-secondary" onclick="copyToClipboard('writer-output')"><i class="fa-solid fa-copy"></i> Salin Teks</button>
-                        <button class="btn btn-secondary" onclick="downloadTextFile('writer-output', 'Novel_AI.txt')"><i class="fa-solid fa-download"></i> Unduh (.txt)</button>
+                <div class="input-group">
+                    <label>Pilih Jumlah Topup</label>
+                    <div class="product-grid" id="productList">
+                        <!-- Produk akan ditambahkan oleh JavaScript -->
                     </div>
+                    <input type="hidden" id="selectedProduct" name="selectedProduct" required>
                 </div>
-            </div>
-            
-            <div id="page-podcast" class="page">
-                <div class="page-header"><h2>Studio Podcast AI</h2><p>Buat podcast audio lengkap dengan suara AI dan musik latar.</p></div>
-                <div class="grid">
-                    <div class="form-section"><h3><i class="fa-solid fa-file-alt"></i> Langkah 1: Naskah</h3>
-                        <div class="input-group"><label for="podcast-prompt">Tema atau Topik Podcast</label><textarea id="podcast-prompt" placeholder="Contoh: Cerita horor singkat tentang pendaki yang tersesat di gunung angker, Misteri hilangnya Amelia Earhart, Tips produktif bekerja dari rumah"></textarea></div>
-                        <button id="podcast-script-btn" class="btn btn-primary" onclick="generatePodcastScript()"><i class="fa-solid fa-pen-nib"></i> Buat Naskah</button>
-                    </div>
-                    <div class="form-section"><h3><i class="fa-solid fa-microphone-alt"></i> Langkah 2: Suara & Musik</h3>
-                        <div class="input-group"><label for="podcast-voice">Pilih Suara (dari ElevenLabs)</label><select id="podcast-voice" disabled><option>Buat naskah dulu...</option></select></div>
-                        <div class="input-group"><label for="podcast-music">Musik Latar (dari Pixabay)</label><input type="text" id="podcast-music" placeholder="Opsional, cth: 'sad piano', 'lofi beat'" disabled></div>
-                        <button id="podcast-generate-btn" class="btn btn-primary" onclick="generatePodcastAudio()" disabled><i class="fa-solid fa-cogs"></i> Buat Audio Podcast</button>
-                    </div>
-                </div>
-                <div class="output-pane"><h3><i class="fa-solid fa-headphones"></i> Hasil Podcast</h3>
-                    <div id="podcast-output" class="output-area" style="min-height: auto; padding: 2rem; text-align: center;">
-                        <p style="color: var(--text-dark);">Audio podcast Anda akan muncul di sini...</p>
-                        <audio id="podcast-audio-player" controls style="display:none;"></audio>
-                    </div>
-                </div>
-            </div>
-            
-            <div id="page-qa" class="page">
-                <div class="page-header"><h2>AI Penjawab Soal</h2><p>Punya pertanyaan? Tanyakan apa saja, dari soal sekolah hingga pengetahuan umum.</p></div>
-                <div class="form-section"><h3><i class="fa-solid fa-keyboard"></i> Masukkan Pertanyaan Anda</h3>
-                    <div class="input-group"><label for="qa-prompt">Ketik pertanyaan Anda di sini</label><textarea id="qa-prompt" placeholder="Contoh: Jelaskan proses fotosintesis secara detail."></textarea></div>
-                    <button id="qa-btn" class="btn btn-primary" onclick="generateGeneric('qa')"><i class="fa-solid fa-brain-circuit"></i> Dapatkan Jawaban</button>
-                </div>
-                <div class="output-pane"><h3><i class="fa-solid fa-file-alt"></i> Jawaban dari AI</h3><textarea id="qa-output" class="output-area" readonly></textarea>
-                    <div class="action-buttons"><button class="btn btn-secondary" onclick="copyToClipboard('qa-output')"><i class="fa-solid fa-copy"></i> Salin</button><button class="btn btn-secondary" onclick="downloadTextFile('qa-output', 'Jawaban_AI.txt')"><i class="fa-solid fa-download"></i> Unduh</button></div>
-                </div>
-            </div>
 
-            <div id="page-lyrics" class="page">
-                <div class="page-header"><h2>Generator Lirik Lagu</h2><p>Ciptakan lirik yang puitis dan emosional dari ide Anda.</p></div>
-                 <div class="form-section"><h3><i class="fa-solid fa-lightbulb"></i> Tema Lagu Anda</h3>
-                    <div class="input-group"><label for="lyrics-prompt">Jelaskan tema, genre, dan perasaan lagu</label><textarea id="lyrics-prompt" placeholder="Contoh: Lagu pop ballad tentang kerinduan pada sahabat lama..."></textarea></div>
-                    <button id="lyrics-btn" class="btn btn-primary" onclick="generateGeneric('lyrics')"><i class="fa-solid fa-microphone-alt"></i> Buat Lirik!</button>
+                <div class="payment-method">
+                    <h3>Metode Pembayaran</h3>
+                    <p>Gopay: 0895340205302</p>
+                    <p>Silakan lakukan pembayaran ke nomor di atas sesuai dengan total harga.</p>
                 </div>
-                <div class="output-pane"><h3><i class="fa-solid fa-file-music"></i> Hasil Lirik</h3><textarea id="lyrics-output" class="output-area" readonly></textarea>
-                    <div class="action-buttons"><button class="btn btn-secondary" onclick="copyToClipboard('lyrics-output')"><i class="fa-solid fa-copy"></i> Salin</button><button class="btn btn-secondary" onclick="downloadTextFile('lyrics-output', 'Lirik_Lagu.txt')"><i class="fa-solid fa-download"></i> Unduh</button></div>
+                
+                <div class="input-group">
+                    <label for="paymentProof">Upload Bukti Pembayaran</label>
+                    <input type="file" id="paymentProof" name="paymentProof" accept="image/*" required>
                 </div>
-            </div>
-
-            <div id="page-poem" class="page">
-                <div class="page-header"><h2>Generator Puisi</h2><p>Sulap kata-kata menjadi untaian puisi yang menyentuh jiwa.</p></div>
-                <div class="form-section"><h3><i class="fa-solid fa-feather-alt"></i> Inspirasi Puisi Anda</h3>
-                    <div class="input-group"><label for="poem-prompt">Tuliskan tentang apa puisi yang Anda inginkan</label><textarea id="poem-prompt" placeholder="Contoh: Hujan di bulan Juni, secangkir kopi di pagi hari..."></textarea></div>
-                    <button id="poem-btn" class="btn btn-primary" onclick="generateGeneric('poem')"><i class="fa-solid fa-pen-fancy"></i> Tulis Puisi!</button>
-                </div>
-                <div class="output-pane"><h3><i class="fa-solid fa-book-open-reader"></i> Hasil Puisi</h3><textarea id="poem-output" class="output-area" readonly></textarea>
-                    <div class="action-buttons"><button class="btn btn-secondary" onclick="copyToClipboard('poem-output')"><i class="fa-solid fa-copy"></i> Salin</button><button class="btn btn-secondary" onclick="downloadTextFile('poem-output', 'Puisi.txt')"><i class="fa-solid fa-download"></i> Unduh</button></div>
-                </div>
-            </div>
-
-            <div id="page-ramalan" class="page">
-                <div class="page-header"><h2>Generator Ramalan (Hiburan)</h2><p>Dapatkan interpretasi kreatif dan narasi fiksi berdasarkan data.</p></div>
-                <div class="disclaimer-box"><h4><i class="fa-solid fa-triangle-exclamation"></i> PERINGATAN PENTING</h4><p>Alat ini untuk <strong>hiburan semata</strong>. Hasilnya adalah <strong>fiksi</strong>, berupa analisis puitis dan cerita kreatif. Ini <strong>BUKAN alat judi</strong>. Gunakan dengan bijak.</p></div>
-                 <div class="form-section"><h3><i class="fa-solid fa-lightbulb"></i> Prompt Konsultasi Anda</h3>
-                    <div class="input-group"><label for="ramalan-prompt">Masukkan prompt untuk analisis kreatif</label><textarea id="ramalan-prompt" placeholder="Contoh: Buatkan analisis puitis tentang pergerakan bintang untuk pasaran Hongkong malam ini. Tema: Naga Air."></textarea></div>
-                    <button id="ramalan-btn" class="btn btn-primary" onclick="generateGeneric('ramalan')"><i class="fa-solid fa-brain-circuit"></i> Beri Saya Interpretasi Fiksi</button>
-                </div>
-                <div class="output-pane"><h3><i class="fa-solid fa-scroll"></i> Hasil Interpretasi Fiksi</h3><textarea id="ramalan-output" class="output-area" readonly></textarea>
-                    <div class="action-buttons"><button class="btn btn-secondary" onclick="copyToClipboard('ramalan-output')"><i class="fa-solid fa-copy"></i> Salin</button><button class="btn btn-secondary" onclick="downloadTextFile('ramalan-output', 'Ramalan_Fiksi.txt')"><i class="fa-solid fa-download"></i> Unduh</button></div>
-                </div>
-            </div>
-            
-            <div id="page-payment" class="page">
-                <div class="page-header"><h2>Beli Kunci API Premium</h2><p>Dapatkan kunci API premium untuk akses tak terbatas ke semua fitur.</p></div>
-                 <div class="payment-container"><div class="form-section"><h3><i class="fa-solid fa-file-invoice-dollar"></i> 1. Lakukan Pembayaran</h3>
-                        <p style="color: var(--text-dark); margin-bottom: 1rem;">Selesaikan pembayaran sebesar <strong>Rp. 15.000</strong> ke akun Gopay di bawah ini.</p>
-                        <div id="qr-code-container" style="text-align:center;"><img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=0895340205302" alt="QR Code Gopay" style="max-width:250px;border:5px solid white;border-radius:10px;"><p style="font-size:1.2em;font-weight:bold;margin-top:1rem;">0895340205302</p><p>(a/n Nabila Studio Development)</p></div>
-                    </div><div class="form-section"><h3><i class="fa-solid fa-user-check"></i> 2. Konfirmasi Pembayaran</h3>
-                        <form id="payment-form">
-                            <div class="input-group"><label for="buyer-name">Nama Lengkap</label><input type="text" id="buyer-name" required></div>
-                            <div class="input-group"><label for="buyer-email">Alamat Email (Untuk pengiriman kunci)</label><input type="email" id="buyer-email" required></div>
-                            <div class="input-group"><label for="payment-proof">Unggah Bukti Pembayaran</label><input type="file" id="payment-proof" accept="image/*" required></div>
-                            <div id="image-preview-container"><p>Pratinjau gambar...</p><img id="image-preview" style="display: none;"/></div>
-                            <button type="submit" class="btn btn-primary" style="margin-top: 1rem;"><i class="fab fa-whatsapp"></i> Kirim Konfirmasi ke Admin</button>
-                        </form></div></div>
-            </div>
-
-            <div id="page-keys" class="page">
-                 <div class="page-header"><h2>Manajemen Kunci API</h2><p>Masukkan semua kunci API Anda di sini untuk mengaktifkan semua fitur.</p></div>
-                <div class="form-section"><h3><i class="fa-solid fa-key"></i> Kunci API Anda</h3><div class="grid">
-                    <div class="input-group"><label for="cohere-key">Kunci API Cohere (Teks)</label><input type="password" id="cohere-key" placeholder="Wajib untuk novel, soal, dll"></div>
-                    <div class="input-group"><label for="stability-key">Kunci API Stability AI (Gambar)</label><input type="password" id="stability-key" placeholder="Wajib untuk generator gambar"></div>
-                    <div class="input-group"><label for="elevenlabs-key">Kunci API ElevenLabs (Suara)</label><input type="password" id="elevenlabs-key" placeholder="Wajib untuk podcast"></div>
-                    <div class="input-group"><label for="pixabay-key">Kunci API Pixabay (Musik)</label><input type="password" id="pixabay-key" placeholder="Opsional, musik latar podcast"></div>
-                </div><button class="btn" id="save-keys-btn" style="width: auto; padding: 0.8rem 1.5rem;"><i class="fa-solid fa-save"></i> Simpan Semua Kunci</button></div>
-            </div>
-            
-            <div id="page-about" class="page">
-                 <!-- Konten tidak berubah, sudah lengkap -->
-            </div>
-        </main>
+                
+                <button type="submit" class="btn-submit">Beli Sekarang</button>
+            </form>
+        </div>
     </div>
 
-    <a href="https://wa.me/6285810526151?text=Halo%20Admin%20Nabila%20Studio" target="_blank" class="whatsapp-fab"><i class="fab fa-whatsapp"></i></a>
-
     <script>
-    //<![CDATA[
-    document.addEventListener('DOMContentLoaded', () => {
-        // --- GLOBAL DOM ELEMENTS ---
-        const dom = {
-            sidebar: document.getElementById('sidebar'),
-            menuToggle: document.getElementById('menu-toggle'),
-            closeMenu: document.getElementById('close-menu'),
-            navLinks: document.querySelectorAll('.nav-link'),
-            apiStatusList: document.getElementById('api-status-list'),
-            // API Keys
-            cohereKeyInput: document.getElementById('cohere-key'),
-            stabilityKeyInput: document.getElementById('stability-key'),
-            elevenlabsKeyInput: document.getElementById('elevenlabs-key'),
-            pixabayKeyInput: document.getElementById('pixabay-key'),
-            saveKeysBtn: document.getElementById('save-keys-btn'),
-            // Image Generator
-            generateImageBtn: document.getElementById('generate-image-btn'),
-            imageOutputArea: document.getElementById('image-output-area'),
-            downloadImageBtn: document.getElementById('download-image-btn'),
-            // Novel Writer
-            writerGenerateBtn: document.getElementById('writer-generate-btn'),
-            writerContinueBtn: document.getElementById('writer-continue-btn'),
-            writerOutput: document.getElementById('writer-output'),
-            // Podcast Studio
-            podcastScriptBtn: document.getElementById('podcast-script-btn'),
-            podcastVoiceSelect: document.getElementById('podcast-voice'),
-            podcastMusicInput: document.getElementById('podcast-music'),
-            podcastGenerateBtn: document.getElementById('podcast-generate-btn'),
-            podcastOutput: document.getElementById('podcast-output'),
-            podcastAudioPlayer: document.getElementById('podcast-audio-player'),
-            // Payment
-            paymentForm: document.getElementById('payment-form'),
-            paymentProofInput: document.getElementById('payment-proof'),
-            imagePreview: document.getElementById('image-preview'),
-            imagePreviewContainer: document.getElementById('image-preview-container'),
-        };
-
-        // --- GLOBAL APP STATE ---
-        let state = {
-            story: { fullStoryContext: "", currentChapterNumber: 1 },
-            podcast: { script: "", voiceId: "", audioUrl: null, musicUrl: null },
-        };
-
-        // --- INITIALIZATION ---
-        loadApiKeys();
-        updateDashboardStatus();
-        
-        // --- EVENT LISTENERS ---
-        dom.navLinks.forEach(link => link.addEventListener('click', e => { 
-            e.preventDefault(); 
-            navigateToPage(link.dataset.page, link);
-            if (window.innerWidth <= 992) dom.sidebar.classList.remove('open');
-        }));
-        dom.saveKeysBtn.addEventListener('click', () => { saveApiKeys(); updateDashboardStatus(); });
-        dom.menuToggle.addEventListener('click', () => dom.sidebar.classList.add('open'));
-        dom.closeMenu.addEventListener('click', () => dom.sidebar.classList.remove('open'));
-        dom.paymentProofInput.addEventListener('change', handleImagePreview);
-        dom.paymentForm.addEventListener('submit', handlePaymentConfirmation);
-
-        // --- UTILITY FUNCTIONS ---
-        window.copyToClipboard = (elementId) => {
-            const el = document.getElementById(elementId);
-            if (!el || !el.value) return Swal.fire('Gagal', 'Tidak ada teks untuk disalin.', 'warning');
-            navigator.clipboard.writeText(el.value)
-                .then(() => Swal.fire('Sukses', 'Teks disalin ke clipboard!', 'success'))
-                .catch(err => Swal.fire('Error', `Gagal menyalin: ${err}`, 'error'));
-        };
-        window.downloadTextFile = (elementId, filename) => {
-            const el = document.getElementById(elementId);
-            if (!el || !el.value) return Swal.fire('Gagal', 'Tidak ada konten untuk diunduh.', 'warning');
-            const blob = new Blob([el.value], { type: 'text/plain;charset=utf-8' });
-            const link = document.createElement('a');
-            link.href = URL.createObjectURL(blob);
-            link.download = filename;
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        };
-
-        // --- NAVIGATION & UI ---
-        window.navigateToPage = (pageId, clickedLink = null) => {
-            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-            document.getElementById(pageId)?.classList.add('active');
-            document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-            const link = clickedLink || document.querySelector(`.nav-link[data-page="${pageId}"]`);
-            if (link) link.classList.add('active');
-        };
-
-        function updateDashboardStatus() {
-            const keys = [
-                { name: 'Cohere (Teks)', key: 'cohereApiKey' },
-                { name: 'Stability AI (Gambar)', key: 'stabilityApiKey' },
-                { name: 'ElevenLabs (Suara)', key: 'elevenlabsApiKey' },
-                { name: 'Pixabay (Musik)', key: 'pixabayApiKey' },
+        document.addEventListener('DOMContentLoaded', function() {
+            const products = [
+                { amount: '3 Diamond', price: 'Rp. 2.000', oldPrice: 'Rp 3.200' },
+                { amount: '5 Diamond', price: 'Rp. 2.800', oldPrice: 'Rp 3.600' },
+                { amount: '10 Diamond', price: 'Rp. 4.300', oldPrice: 'Rp 4.900' },
+                { amount: '12 Diamond', price: 'Rp. 5.400', oldPrice: 'Rp 6.700' },
+                { amount: '14 Diamond', price: 'Rp. 5.900', oldPrice: 'Rp 7.400' },
+                { amount: '18 Diamond', price: 'Rp. 6.700', oldPrice: 'Rp. 8.600' },
+                { amount: '19 Diamond', price: 'Rp. 7.400', oldPrice: 'Rp 9.600' },
+                { amount: '28 Diamond', price: 'Rp. 9.400', oldPrice: 'Rp 11.700' },
+                { amount: '36 Diamond', price: 'Rp. 11.400', oldPrice: 'Rp 13.500' },
+                { amount: '44 Diamond', price: 'Rp. 13.500', oldPrice: 'Rp 15.700' },
+                { amount: '46 Diamond', price: 'Rp. 14.500', oldPrice: 'Rp 16.700' },
+                { amount: '54 Diamond', price: 'Rp. 16.500', oldPrice: 'Rp.19.000' },
+                { amount: '74 Diamond', price: 'Rp. 21.500', oldPrice: 'Rp23.700' },
+                { amount: '85 Diamond', price: 'Rp. 24.300', oldPrice: 'Rp 26.300' },
+                { amount: '88 Diamond', price: 'Rp. 25.400', oldPrice: 'Rp. 27.400' },
+                { amount: '110 Diamond', price: 'Rp. 31.400', oldPrice: 'Rp 32.400' },
+                { amount: '113 Diamond', price: 'Rp. 31.900', oldPrice: 'Rp 33.600' },
+                { amount: '184 Diamond', price: 'Rp. 50.000', oldPrice: 'Rp.51.000' },
+                { amount: '222 Diamond', price: 'Rp. 59.900', oldPrice: 'Rp 62.500' },
+                { amount: '240 Diamond', price: 'Rp. 64.400', oldPrice: 'Rp 66.700' },
+                { amount: '258 Diamond', price: 'Rp. 69.500', oldPrice: 'Rp 71.500' },
+                { amount: '277 Diamond', price: 'Rp. 74.500', oldPrice: 'Rp 75.400' },
+                { amount: '284 Diamond', price: 'Rp. 75.500', oldPrice: 'Rp.76.600' },
+                { amount: '296 Diamond', price: 'Rp. 78.500', oldPrice: 'Rp 79.900' },
+                { amount: '301 Diamond', price: 'Rp. 79.353', oldPrice: 'Rp.81.500' },
+                { amount: '356 Diamond', price: 'Rp. 95.071', oldPrice: 'Rp. 98.500' },
+                { amount: '408 Diamond', price: 'Rp. 107.018', oldPrice: 'Rp. 109.500' },
+                { amount: '518 Diamond', price: 'Rp. 135.957', oldPrice: 'Rp. 138.900' },
+                { amount: '601 Diamond', price: 'Rp. 155.500', oldPrice: 'Rp. 159.700' },
+                { amount: '938 Diamond', price: 'Rp. 242.701', oldPrice: 'Rp. 248.501' },
+                { amount: '1159 Diamond', price: 'Rp. 295.500', oldPrice: 'Rp. 298.900' },
             ];
-            dom.apiStatusList.innerHTML = keys.map(item => {
-                const exists = !!localStorage.getItem(item.key);
-                return `<li><span><i class="fa-solid fa-key"></i> ${item.name}</span>
-                        ${exists ? '<span class="api-status-badge status-ok">TERPASANG</span>' : `<a href="#" onclick="navigateToPage('page-keys')">Isi Kunci <i class="fa-solid fa-arrow-right"></i></a>`}
-                        </li>`;
-            }).join('');
-        }
 
-        // --- KEY MANAGEMENT ---
-        function loadApiKeys() {
-            dom.cohereKeyInput.value = localStorage.getItem('cohereApiKey') || '';
-            dom.stabilityKeyInput.value = localStorage.getItem('stabilityApiKey') || '';
-            dom.elevenlabsKeyInput.value = localStorage.getItem('elevenlabsApiKey') || '';
-            dom.pixabayKeyInput.value = localStorage.getItem('pixabayApiKey') || '';
-        }
-        function saveApiKeys() {
-            localStorage.setItem('cohereApiKey', dom.cohereKeyInput.value);
-            localStorage.setItem('stabilityApiKey', dom.stabilityKeyInput.value);
-            localStorage.setItem('elevenlabsApiKey', dom.elevenlabsKeyInput.value);
-            localStorage.setItem('pixabayApiKey', dom.pixabayKeyInput.value);
-            Swal.fire('Sukses', 'Semua Kunci API telah disimpan di browser Anda.', 'success');
-        }
-        function getApiKey(service) {
-            const keyName = `${service}ApiKey`;
-            const key = localStorage.getItem(keyName);
-            if (!key) {
-                Swal.fire({ icon: 'error', title: 'Kunci API Hilang', html: `Harap masukkan <b>Kunci API untuk ${service}</b> di halaman 'Manajemen Kunci API'.`})
-                .then(() => navigateToPage('page-keys'));
-                return null;
-            }
-            return key;
-        }
-        
-        // --- PAYMENT LOGIC ---
-        function handleImagePreview() { 
-            const file = this.files[0]; 
-            if (file) { 
-                const reader = new FileReader(); 
-                dom.imagePreview.style.display = 'block'; 
-                dom.imagePreviewContainer.firstElementChild.style.display = 'none';
-                reader.onload = e => { dom.imagePreview.src = e.target.result; }; 
-                reader.readAsDataURL(file); 
-            } 
-        }
-        function handlePaymentConfirmation(e) {
-            e.preventDefault(); 
-            const name = document.getElementById('buyer-name').value; 
-            const email = document.getElementById('buyer-email').value; 
-            if (!name || !email || !dom.paymentProofInput.files[0]) {
-                return Swal.fire('Error', 'Harap isi semua kolom dan unggah bukti pembayaran.', 'error'); 
-            }
-            const adminPhone = '6285810526151';
-            const message = `Halo Admin Nabila Studio,\n\nSaya ingin konfirmasi pembelian Kunci API Premium.\n\n*Detail:*\nNama: *${name}*\nEmail: *${email}*\n\nBukti pembayaran saya lampirkan. Mohon diproses.`;
-            window.open(`https://wa.me/${adminPhone}?text=${encodeURIComponent(message)}`, '_blank');
-            Swal.fire({ icon: 'success', title: 'Redirect ke WhatsApp!', html: '<b>PENTING:</b> Jangan lupa untuk <b>melampirkan gambar bukti pembayaran</b> Anda di dalam chat.', confirmButtonText: 'Saya Mengerti!' });
-        }
-        
-        // --- COHERE API WRAPPER ---
-        async function callCohere(preamble, message) {
-            const cohereKey = getApiKey('cohere');
-            if (!cohereKey) return null;
+            const productList = document.getElementById('productList');
+            const selectedProductInput = document.getElementById('selectedProduct');
             
-            const response = await fetch("https://api.cohere.com/v1/chat", {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${cohereKey}` },
-                body: JSON.stringify({ message, preamble, model: 'command-r-plus' }),
-            });
-
-            if (!response.ok) {
-                const err = await response.json();
-                throw new Error(`Cohere API Error: ${err.message || response.statusText}`);
-            }
-            const data = await response.json();
-            return data.text;
-        }
-
-        // --- AI IMAGE GENERATOR ---
-        window.generateImage = async () => {
-            const stabilityKey = getApiKey('stability');
-            const prompt = document.getElementById('image-prompt').value;
-            if (!stabilityKey || !prompt) return Swal.fire('Input Tidak Lengkap', 'Kunci API Stability dan Prompt wajib diisi.', 'warning');
-
-            dom.generateImageBtn.disabled = true;
-            dom.downloadImageBtn.style.display = 'none';
-            Swal.fire({ title: 'Sedang Menggambar...', html: 'AI sedang mengubah teks menjadi visual...', allowOutsideClick: false, didOpen: () => Swal.showLoading() });
-
-            try {
-                const response = await fetch("https://api.stability.ai/v1/generation/stable-diffusion-v1-6/text-to-image", {
-                    method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json', 'Authorization': `Bearer ${stabilityKey}`},
-                    body: JSON.stringify({
-                        text_prompts: [{ text: prompt }, { text: document.getElementById('image-negative-prompt').value, weight: -1 }],
-                        cfg_scale: 7, height: 512, width: 512, steps: 30, samples: 1,
-                        style_preset: document.getElementById('image-style').value,
-                    }),
+            products.forEach(product => {
+                const item = document.createElement('div');
+                item.classList.add('product-item');
+                item.dataset.productName = `${product.amount} - ${product.price}`;
+                item.innerHTML = `
+                    <div class="amount">${product.amount}</div>
+                    <div class="price">${product.price}</div>
+                    <div class="old-price">${product.oldPrice}</div>
+                `;
+                item.addEventListener('click', function() {
+                    document.querySelectorAll('.product-item').forEach(p => p.style.borderColor = '#ffd700');
+                    this.style.borderColor = '#ffffff';
+                    this.style.boxShadow = '0 0 15px rgba(255, 255, 255, 0.5)';
+                    selectedProductInput.value = this.dataset.productName;
                 });
-
-                if (!response.ok) { const err = await response.json(); throw new Error(err.message); }
-                const data = await response.json();
-                const b64 = `data:image/png;base64,${data.artifacts[0].base64}`;
-                dom.imageOutputArea.innerHTML = `<img src="${b64}" alt="Generated Image">`;
-                dom.downloadImageBtn.style.display = 'inline-block';
-                dom.downloadImageBtn.dataset.base64 = b64;
-                Swal.fire('Selesai!', 'Gambar berhasil dibuat.', 'success');
-            } catch (error) {
-                Swal.fire('Terjadi Kesalahan', `Gagal membuat gambar: ${error.message}`, 'error');
-                dom.imageOutputArea.innerHTML = `<p style="color: var(--danger-color);">Gagal memuat gambar.</p>`;
-            } finally {
-                dom.generateImageBtn.disabled = false;
-            }
-        };
-        window.downloadImage = () => {
-            const b64 = dom.downloadImageBtn.dataset.base64;
-            if (!b64) return;
-            const link = document.createElement('a');
-            link.href = b64;
-            link.download = `nabila-studio-image-${Date.now()}.png`;
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        };
-        
-        // --- AI NOVEL WRITER ---
-        window.generateNovel = async () => {
-            const prompt = document.getElementById('writer-prompt').value;
-            if (!prompt) return Swal.fire('Input Kosong', 'Harap masukkan premis novel Anda.', 'warning');
-            
-            dom.writerGenerateBtn.disabled = true;
-            Swal.fire({ title: 'Membuat Cerita...', html: 'AI sedang membangun dunia dan karakter untuk Anda...', allowOutsideClick: false, didOpen: () => Swal.showLoading() });
-            
-            try {
-                const preamble = `Anda adalah penulis novel berbakat dengan gaya penulisan yang kaya, deskriptif, dan imersif. Anda akan menulis bab pertama dari sebuah cerita berdasarkan premis yang diberikan. Pastikan bab ini memperkenalkan karakter utama, setting, dan konflik awal dengan baik. Akhiri bab dengan kalimat yang membuat pembaca penasaran.`;
-                const result = await callCohere(preamble, prompt);
-                
-                state.story.fullStoryContext = `Premis Awal: ${prompt}\n\n${result}`;
-                state.story.currentChapterNumber = 1;
-                dom.writerOutput.value = result;
-                dom.writerContinueBtn.style.display = 'inline-block';
-                dom.writerContinueBtn.textContent = `Lanjutkan ke Bab 2`;
-                Swal.fire('Bab 1 Selesai!', 'Novel Anda telah dimulai.', 'success');
-            } catch (error) {
-                Swal.fire('Error', `Gagal membuat novel: ${error.message}`, 'error');
-            } finally {
-                dom.writerGenerateBtn.disabled = false;
-            }
-        };
-
-        window.continueNovel = async () => {
-            dom.writerContinueBtn.disabled = true;
-            state.story.currentChapterNumber++;
-            Swal.fire({ title: `Menulis Bab ${state.story.currentChapterNumber}...`, html: 'AI sedang melanjutkan kisah...', allowOutsideClick: false, didOpen: () => Swal.showLoading() });
-
-            try {
-                const preamble = `Anda adalah penulis novel yang melanjutkan cerita yang sudah ada. Berdasarkan konteks cerita sejauh ini, tulis bab selanjutnya. Jaga konsistensi karakter, plot, dan gaya penulisan. Buat bab yang menarik dan akhiri dengan cliffhanger jika memungkinkan.`;
-                const message = `Konteks Cerita Sejauh Ini:\n\n${state.story.fullStoryContext}\n\nInstruksi: Lanjutkan cerita dengan menulis Bab ${state.story.currentChapterNumber}. Jangan ulangi judul bab di dalam teks.`;
-                const nextChapter = await callCohere(preamble, message);
-                
-                const chapterHeader = `\n\n\n--- BAB ${state.story.currentChapterNumber} ---\n\n`;
-                const fullText = dom.writerOutput.value + chapterHeader + nextChapter;
-                
-                dom.writerOutput.value = fullText;
-                state.story.fullStoryContext = fullText;
-                dom.writerOutput.scrollTop = dom.writerOutput.scrollHeight;
-                dom.writerContinueBtn.textContent = `Lanjutkan ke Bab ${state.story.currentChapterNumber + 1}`;
-                Swal.close();
-            } catch (error) {
-                Swal.fire('Error', `Gagal melanjutkan novel: ${error.message}`, 'error');
-                state.story.currentChapterNumber--; // Revert chapter count on error
-            } finally {
-                dom.writerContinueBtn.disabled = false;
-            }
-        };
-
-        // --- STUDIO PODCAST ---
-        window.generatePodcastScript = async () => {
-            const prompt = document.getElementById('podcast-prompt').value;
-            if (!prompt) return Swal.fire('Input Kosong', 'Harap masukkan tema podcast.', 'warning');
-
-            dom.podcastScriptBtn.disabled = true;
-            Swal.fire({ title: 'Menulis Naskah...', html: 'AI sedang membuat naskah podcast...', allowOutsideClick: false, didOpen: () => Swal.showLoading() });
-            
-            try {
-                const preamble = `Anda adalah penulis naskah podcast yang handal. Anda menulis naskah yang menarik, informatif, atau menghibur dengan bahasa lisan yang natural. Jangan sertakan isyarat suara seperti '(musik masuk)' atau nama pembicara, hanya naskah murni.`;
-                const result = await callCohere(preamble, `Buat naskah podcast singkat tentang: "${prompt}"`);
-                state.podcast.script = result;
-                await getElevenLabsVoices();
-                dom.podcastVoiceSelect.disabled = false;
-                dom.podcastMusicInput.disabled = false;
-                dom.podcastGenerateBtn.disabled = false;
-                Swal.fire('Naskah Siap!', 'Naskah telah dibuat, sekarang pilih suara.', 'success');
-            } catch (error) {
-                Swal.fire('Error', `Gagal membuat naskah: ${error.message}`, 'error');
-            } finally {
-                dom.podcastScriptBtn.disabled = false;
-            }
-        };
-
-        async function getElevenLabsVoices() {
-            const elevenKey = getApiKey('elevenlabs');
-            if (!elevenKey) return;
-            try {
-                const response = await fetch('https://api.elevenlabs.io/v1/voices', { headers: {'xi-api-key': elevenKey }});
-                if (!response.ok) throw new Error('Gagal mengambil data suara.');
-                const data = await response.json();
-                dom.podcastVoiceSelect.innerHTML = data.voices.map(v => `<option value="${v.voice_id}">${v.name} (${v.labels.accent || 'N/A'})</option>`).join('');
-            } catch (error) {
-                Swal.fire('Error Suara', error.message, 'error');
-                dom.podcastVoiceSelect.innerHTML = '<option>Gagal memuat suara</option>';
-            }
-        }
-
-        window.generatePodcastAudio = async () => {
-            const elevenKey = getApiKey('elevenlabs');
-            const pixabayKey = localStorage.getItem('pixabayApiKey'); // Optional
-            if (!elevenKey) return;
-
-            dom.podcastGenerateBtn.disabled = true;
-            state.podcast.voiceId = dom.podcastVoiceSelect.value;
-            const musicQuery = dom.podcastMusicInput.value;
-
-            Swal.fire({ title: 'Membuat Podcast...', html: 'Menggabungkan suara dan musik. Ini mungkin perlu waktu...', allowOutsideClick: false, didOpen: () => Swal.showLoading() });
-
-            try {
-                // Generate Speech
-                const speechUrl = await generateSpeech(elevenKey);
-                state.podcast.audioUrl = speechUrl;
-
-                // Fetch Music (if any)
-                if (musicQuery && pixabayKey) {
-                    state.podcast.musicUrl = await getPixabayMusic(pixabayKey, musicQuery);
-                }
-                
-                // For simplicity, we play them sequentially or just provide the speech
-                // True audio mixing requires a server or complex client-side library
-                dom.podcastAudioPlayer.src = state.podcast.audioUrl;
-                dom.podcastAudioPlayer.style.display = 'block';
-                dom.podcastOutput.firstElementChild.style.display = 'none';
-
-                let successMessage = 'Podcast audio berhasil dibuat!';
-                if (state.podcast.musicUrl) {
-                    successMessage += ' Musik latar ditemukan (fitur mixing belum ada, musik tidak digabung).';
-                }
-                Swal.fire('Selesai!', successMessage, 'success');
-
-            } catch(error) {
-                Swal.fire('Error Podcast', `Gagal membuat audio: ${error.message}`, 'error');
-            } finally {
-                dom.podcastGenerateBtn.disabled = false;
-            }
-        };
-
-        async function generateSpeech(apiKey) {
-            const response = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${state.podcast.voiceId}`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json', 'xi-api-key': apiKey },
-                body: JSON.stringify({ text: state.podcast.script, model_id: 'eleven_multilingual_v2' }),
+                productList.appendChild(item);
             });
-            if (!response.ok) throw new Error('Gagal menghasilkan suara dari ElevenLabs.');
-            const blob = await response.blob();
-            return URL.createObjectURL(blob);
-        }
 
-        async function getPixabayMusic(apiKey, query) {
-            const response = await fetch(`https://pixabay.com/api/music/?key=${apiKey}&q=${encodeURIComponent(query)}&per_page=3`);
-            if (!response.ok) return null; // Fail silently
-            const data = await response.json();
-            return data.hits.length > 0 ? data.hits[0].previewURL : null;
-        }
+            document.getElementById('purchaseForm').addEventListener('submit', function(event) {
+                event.preventDefault();
 
-        // --- GENERIC CONTENT GENERATOR (QA, Lyrics, Poem, Ramalan) ---
-        window.generateGeneric = async (type) => {
-            const btn = document.getElementById(`${type}-btn`);
-            const promptInput = document.getElementById(`${type}-prompt`);
-            const outputArea = document.getElementById(`${type}-output`);
-            if (!promptInput.value) return Swal.fire('Input Kosong', 'Harap masukkan prompt/pertanyaan.', 'warning');
-            
-            const prompts = {
-                qa: { p: "Anda adalah AI asisten serba tahu. Beri jawaban akurat, terstruktur, dan mudah dipahami dalam Bahasa Indonesia.", m: `Jawab pertanyaan ini: "${promptInput.value}"`, l: "Mencari jawaban terbaik..." },
-                lyrics: { p: "Anda adalah penulis lagu profesional. Ciptakan lirik puitis dan emosional dengan struktur (verse, chorus, bridge).", m: `Tulis lirik lagu dengan tema: "${promptInput.value}"`, l: "Merangkai kata menjadi lagu..." },
-                poem: { p: "Anda adalah penyair agung Indonesia. Tulis puisi dengan diksi indah, majas kaya, dan makna mendalam.", m: `Tulis puisi tentang: "${promptInput.value}"`, l: "Mencari inspirasi puitis..." },
-                ramalan: { p: "Anda narator fiksi. Anda TIDAK PERNAH memberi angka. Ubah permintaan ramalan menjadi cerita pendek/puitis untuk hiburan.", m: `Buat interpretasi naratif/puitis fiksi dari: "${promptInput.value}". Ingat, ini hiburan, tanpa angka.`, l: "Membaca takdir dalam bintang fiksi..." }
-            };
+                const userId = document.getElementById('userId').value;
+                const zoneId = document.getElementById('zoneId').value;
+                const selectedProduct = document.getElementById('selectedProduct').value;
+                const paymentProof = document.getElementById('paymentProof').files[0];
+                
+                if (!selectedProduct) {
+                    alert('Silakan pilih jumlah topup terlebih dahulu.');
+                    return;
+                }
+                
+                if (!paymentProof) {
+                    alert('Silakan upload bukti pembayaran.');
+                    return;
+                }
 
-            btn.disabled = true;
-            Swal.fire({ title: 'Sedang Memproses...', html: prompts[type].l, allowOutsideClick: false, didOpen: () => Swal.showLoading() });
+                const adminWhatsApp = '6285810526151'; // Format internasional tanpa + atau 0 di depan
+                
+                const message = `Halo Admin Nabila Ahmad Topup,
 
-            try {
-                const result = await callCohere(prompts[type].p, prompts[type].m);
-                outputArea.value = result;
-                Swal.fire('Selesai!', 'Konten berhasil dibuat.', 'success');
-            } catch (error) {
-                Swal.fire('Error', `Gagal menghasilkan konten: ${error.message}`, 'error');
-            } finally {
-                btn.disabled = false;
-            }
-        };
+Saya ingin melakukan pemesanan:
+User ID: ${userId}
+Zone ID: ${zoneId}
+Produk: ${selectedProduct}
 
-    });
-    //]]>
+Saya sudah melakukan pembayaran dan melampirkan buktinya. Mohon segera diproses. Terima kasih.`;
+
+                const whatsappUrl = `https://api.whatsapp.com/send?phone=${adminWhatsApp}&text=${encodeURIComponent(message)}`;
+                
+                window.open(whatsappUrl, '_blank');
+            });
+        });
     </script>
 </body>
 </html>
